@@ -1,0 +1,181 @@
+* {
+  font-family: Roboto;
+}
+body {
+  margin: auto;
+}
+header {
+  background-color: #007765;
+  color: #FFF;
+  font-size: 24px;
+  font-style: normal;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-size: cover;
+  padding: 20px 0px 20px 0px;
+  overflow: clear;
+}
+header a {
+  color: #FFF;
+  text-decoration: none;
+}
+.header_block {
+  width: 1110px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation {
+  display: inline-block;
+}
+.logo {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.announce {
+  background-image: url("PiedPiper/image-8.png");
+  padding: 160px;
+  color: #FFF;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 84px;
+  text-align: center;
+}
+.the_problem {
+  padding: 0;
+  margin: auto;
+}
+.the_problem > h1 {
+  margin-top: 48px;
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  text-align: center;
+  color: #007765;
+}
+.the_problem > .problem_text {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 92px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  margin-bottom: 0;
+  width: 1110px;
+}
+.together {
+  background-image: url("PiedPiper/image-1.png");
+  background-size: cover;
+  padding: 127px;
+  color: #FFF;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+}
+.together > p {
+  width: 893px;
+  height: 228px;
+  margin: 0 auto;
+}
+.PiedPiperCoin {
+  margin-top: 48px;
+  margin-bottom: 92px;
+}
+.PiedPiperCoin > h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  text-align: center;
+  color: #007765;
+}
+.PiedPiperCoin > .PiedPiperCoin_text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 37px;
+  width: 1110px;
+  margin: 0 auto;
+}
+.PiedPiperCoin .PiedPiperCoin_text img{
+  /* PPC Logo */
+  width: 115px;
+  height: 115px;
+  float: left;
+  background-image: url(image.png);
+  padding-right: 48px;
+}
+.the_team {
+  background-color: #EEE;
+}
+.the_team > h1 {
+  margin: auto;
+  padding-top: 58px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  text-align: center;
+  color: #007765;
+}
+.the_team {
+  font-style: normal;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  padding-bottom: 84px;
+}
+.the_team .t1{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 350px;
+  height: 283px;
+  padding: 30px 0;
+}
+.the_team .t2{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 350px;
+  height: 283px;
+  padding: 30px 0;
+}
+.the_team .t3{
+  display: inline-block;
+  vertical-align: bottom;
+  width: 350px;
+  height: 283px;
+  padding: 30px 0;
+}
+.the_team .name {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #007765;
+}
+.the_team .position {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+.copiright {
+  margin: auto;
+  padding: 50px 20px 62px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #333333;
+}
+.copiright p {
+  margin: auto;
+  width: 540px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+}
