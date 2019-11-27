@@ -1,0 +1,93 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    color: #161616;
+}
+header {
+    margin: 0;
+    padding-top: 23px;
+    padding-bottom: 20px;
+    background-color: #e3f0f7;
+}
+.head {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.head img {
+    display: inline-block;
+    margin-bottom: 10px;
+    max-width: 35px;
+    height: auto;
+}
+h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.38px;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.26px;
+}
+.project {
+    /* width: 70%; */
+    text-align: center;
+    padding-top: 50px;
+}
+.about_project {
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+}
+h3 {
+    margin: 0 auto 30px;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 0.48px;
+}
+.badge {
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    line-height: 26px;
+    padding: 0 10px;
+    height: 26px;
+}
+.introduce {
+    margin: 25px auto 33px;
+    width: 70%;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: 0.26px;
+}
+.badge_html {
+    color: beige;
+  background-color: #ff861a;   
+}
+.badge_css {
+    color: beige;
+    background-color: #039be5;
+}
+.badge_bootstrap {
+    color: beige;
+    background-color: #a062c7;
+}
+.about_project .demo {
+    margin: 0 auto 53px;
+    color: #039be5;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 32px;
+    text-decoration: underline;
+    letter-spacing: 0.26px;
+}
+.img_shop img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
