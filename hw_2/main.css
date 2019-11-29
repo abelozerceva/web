@@ -87,7 +87,58 @@ h3 {
     letter-spacing: 0.26px;
 }
 .img_shop img{
+    margin: 0 auto;
     display: block;
     max-width: 100%;
     height: auto;
+    /* Style for "Прямоуголь" */
+    box-shadow: 20px 20px 100px rgba(196, 219, 233, 0.5);
+    background-color: #039be5;
+    margin-bottom: 53px;
 }
+.button_flex {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 410px) {
+    .button_flex { width: 80%; }
+}
+.button {
+    padding: 20px 0;
+    text-align: center;
+    color: #039be5;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: 0.26px;
+    text-decoration: none;
+    width: calc(50% - 10px);
+    /* height: 20px; */
+    /* height: 80px; */
+    border: 1px solid #d2ebf7;
+}
+footer {
+    margin: 75px auto 82px;
+    width: 60%;
+    font-size: 18px;
+    font-weight: 400;
+    color: #161616;
+    letter-spacing: 0.43px;
+    text-align: center;
+}
+.button:hover {
+    transition: border-color 0.3s ease-in-out;
+    border-color: #ff861a; 
+}
+footer a{
+    color: #4298e8;
+    font-family: "Roboto - Thin";
+    text-decoration: underline;
+    letter-spacing: 0.43px;
+}
+/* footer p {
+    margin-top: 33px;
+} */
