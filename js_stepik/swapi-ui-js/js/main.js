@@ -25,3 +25,18 @@ $('#edit').on('click', function (){
     }
 });
 
+let preview = $('.preview-wrapper');
+let themeSelect = $('.theme-select');
+
+$('.theme-select').on('click', function(){
+    for (let theme of themeSelect) {
+        theme.classList.remove('selected-theme');
+    }
+    this.classList.add('selected-theme');
+    if (this.id === 'indigo') {
+        preview[0].classList.value = 'preview-wrapper indigo-theme';
+    }
+    else {
+        preview[0].classList.value = 'preview-wrapper black-theme';
+    }
+});
