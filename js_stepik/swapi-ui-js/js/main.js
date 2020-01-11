@@ -6,7 +6,7 @@ $(function(){
         $(this).load(file);
     });
 });
-
+// Здесь хранятся основные настройки темы оформления
 let theme = {
     themeType: 'indigo-theme',
     secondaryColor: '#4ebdd4',
@@ -24,7 +24,7 @@ let theme = {
         localStorage.setItem('themeType', this.themeType);
     }
 };
-
+// Нужно, чтобы при перезагрузке страницы оформление сохранялось
 document.addEventListener('DOMContentLoaded', function () {
     let sColor = localStorage.getItem('secondaryColor');
     let sTheme = localStorage.getItem('themeType');
@@ -34,14 +34,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     theme.update();
 });
-
+// Открытие меню
 $('.menu-btn').on('click',function () {
     $('.menu-wrapper').slideToggle('slow');
  });
-
+// окно настройки оформления
 let editPopup = document.querySelector('.edit-popup');
+// флаг для открытия/закрытия настройки оформления
 let editPopupSwitcher = false;
-
+// обработка нажатия кнопки вызова настройки оформления
 $('#edit').on('click', function (){
     this.classList.remove('pulse');
     editPopupSwitcher = !editPopupSwitcher;
@@ -52,17 +53,18 @@ $('#edit').on('click', function (){
         TweenMax.to(editPopup, 1, {x:'-200%', display:'block', width:'60%', height:'0hv', ease: Power3.easeOut});
     }
 });
-
+// закрытие настройки оформления при нажатии по области вне окна настройки
 $('.content-wrapper').on('click', function() {
     if (editPopupSwitcher) {
         TweenMax.to(editPopup, 1, {x:'-200%', display:'block', width:'60%', height:'0hv', ease: Power3.easeOut});
         editPopupSwitcher = false;
     }
 });
-
+// окно предпросмотра оформения
 let preview = $('.preview-wrapper');
+// выбор цвета фона
 let themeSelect = $('.theme-select');
-
+// сбор компонентов для изменения вторичного цвета(кнопка, линии загрузки)
 let previewChild = function() {
     let nodes = [];
     let progressLine = $('.progress-line');
@@ -71,12 +73,12 @@ let previewChild = function() {
     nodes.push(button[0]);
     return nodes;
 };
-
+// доп переменная для хранения предварительных настроек
 let themePreview = {
     themeType: 'indigo-theme',
     secondaryColor: '#4ebdd4'
 };
-
+// обработка кнопок смены фона
 $('.theme-select').on('click', function(){
     for (let theme of themeSelect) {
         theme.classList.remove('selected-theme');
@@ -91,13 +93,13 @@ $('.theme-select').on('click', function(){
         themePreview.themeType = 'black-theme';
     }
 });
-
+// обработка кнопок смены вторичного цвета
 $('.radio-item>label>span').on('click', function() {
     // console.log(previewChild);
     previewChild().forEach(el => el.style.backgroundColor = this.style.color);
     themePreview.secondaryColor = this.style.color;
 });
-
+// кнопка сохранения настроек оформления
 $('#save-theme-btn').on('click', function () {
     theme.themeType = themePreview.themeType;
     theme.secondaryColor = themePreview.secondaryColor;
