@@ -7,6 +7,34 @@ $(function(){
     });
 });
 
+let theme = {
+    themeType: 'indigo-theme',
+    secondaryColor: '#4ebdd4',
+    update: function() {
+        document.getElementById('edit').style.backgroundColor = this.secondaryColor;
+        $('.content-wrapper')[0].classList.value = `content-wrapper ${this.themeType}`;
+        document.getElementById('nav').classList.value = `nav-wrapper navbar-fixed ${this.themeType}`;
+        $('.menu-btn')[0].childNodes.forEach(el => {
+            if (el.nodeType !== 3) {
+                el.style.backgroundColor = this.secondaryColor;
+            }
+        });
+        $('.progress-line').each(el => $('.progress-line')[el].style.backgroundColor = this.secondaryColor);
+        localStorage.setItem('secondaryColor', this.secondaryColor);
+        localStorage.setItem('themeType', this.themeType);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+    let sColor = localStorage.getItem('secondaryColor');
+    let sTheme = localStorage.getItem('themeType');
+    if (sColor !== null && sTheme !== null) {
+        theme.themeType = sTheme;
+        theme.secondaryColor = sColor;
+    }
+    theme.update();
+});
+
 $('.menu-btn').on('click',function () {
     $('.menu-wrapper').slideToggle('slow');
  });
@@ -25,8 +53,29 @@ $('#edit').on('click', function (){
     }
 });
 
+$('.content-wrapper').on('click', function() {
+    if (editPopupSwitcher) {
+        TweenMax.to(editPopup, 1, {x:'-200%', display:'block', width:'60%', height:'0hv', ease: Power3.easeOut});
+        editPopupSwitcher = false;
+    }
+});
+
 let preview = $('.preview-wrapper');
 let themeSelect = $('.theme-select');
+
+let previewChild = function() {
+    let nodes = [];
+    let progressLine = $('.progress-line');
+    let button = $('.preview-wrapper>a');
+    nodes.push(progressLine[progressLine.length - 1]);
+    nodes.push(button[0]);
+    return nodes;
+};
+
+let themePreview = {
+    themeType: 'indigo-theme',
+    secondaryColor: '#4ebdd4'
+};
 
 $('.theme-select').on('click', function(){
     for (let theme of themeSelect) {
@@ -35,8 +84,22 @@ $('.theme-select').on('click', function(){
     this.classList.add('selected-theme');
     if (this.id === 'indigo') {
         preview[0].classList.value = 'preview-wrapper indigo-theme';
+        themePreview.themeType = 'indigo-theme';
     }
     else {
         preview[0].classList.value = 'preview-wrapper black-theme';
+        themePreview.themeType = 'black-theme';
     }
+});
+
+$('.radio-item>label>span').on('click', function() {
+    // console.log(previewChild);
+    previewChild().forEach(el => el.style.backgroundColor = this.style.color);
+    themePreview.secondaryColor = this.style.color;
+});
+
+$('#save-theme-btn').on('click', function () {
+    theme.themeType = themePreview.themeType;
+    theme.secondaryColor = themePreview.secondaryColor;
+    theme.update();
 });
