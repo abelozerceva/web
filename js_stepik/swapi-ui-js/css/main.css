@@ -52,10 +52,9 @@ ul{
     height: 100%;
 }
 .home-content_wrapper{
-    margin: 0 auto;
+    margin: 0 auto 100px;
     color: #c8c8c8;
     width: 85%;
-    height: 100vh;
     padding-top: 3%;
     padding-left: 5%;
     padding-right: 5%;
