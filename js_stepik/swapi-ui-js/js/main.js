@@ -86,7 +86,7 @@ $('.radio-item>label>span').on('click', function() {
 });
 // кнопка сохранения настроек оформления
 $('#save-theme-btn').on('click', function () {
-    theme.themeType = themePreview.themeType;
-    theme.secondaryColor = themePreview.secondaryColor;
+    localStorage.themeType = themePreview.themeType;
+    localStorage.secondaryColor = themePreview.secondaryColor;
     theme.update();
 });
