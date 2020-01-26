@@ -17,17 +17,17 @@ let skills = [
     {
         name: 'JavaScript',
         val: '80%',
-        color: '#4ebdd4'
+        color: '#31e67c'
     },
     {
         name: 'Vue.js',
         val: '50%',
-        color: '#4ebdd4',
+        color: '#017bc2',
     },
     {
         name: 'CSS',
         val: '85%',
-        color: '#4ebdd4'
+        color: '#d4057e'
     }
 ];
 
