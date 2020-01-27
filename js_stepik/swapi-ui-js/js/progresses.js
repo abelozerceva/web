@@ -1,3 +1,4 @@
+// html навыка с линией прогресса
 function Skill(skill) {
     return `<div class="skill-container">
                 <div style="flex: 1;">${skill.name}</div>
@@ -6,17 +7,17 @@ function Skill(skill) {
                 </div>
             </div>`
 }
-
+// объединение навыков в список
 function SkillsBlock(skills) {
     return `<div class="skills_block">
         ${skills.map(Skill).join('')}
     </div>`
 }
-
+// описание навыка
 let skills = [
     {
         name: 'JavaScript',
-        val: '80%',
+        val: '80%', // процента изученности навыка
         color: '#31e67c'
     },
     {
@@ -30,5 +31,5 @@ let skills = [
         color: '#d4057e'
     }
 ];
-
+// добавление списка навыков внутрь класса skills-sections
 $('.skills-sections')[0].innerHTML = SkillsBlock(skills);
