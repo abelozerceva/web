@@ -59,3 +59,43 @@ function Personage(pers) {
  
     drawPersonages();
  };
+// загрузка следующей/предыдущей страницы с описанием персонажей с сервера
+ let load = async function loadNewPeoplesPage(url){
+   let {next,previous,results} = await fetch(url).then(res => res.json());
+
+   nextPeoplesPage = next;
+   prevPeoplesPage = previous;
+
+   peoples = results.map( (el,i) => {
+      el.i = i;
+      return el;
+   });
+
+   drawPersonages();
+};
+// стрелка вперед для персонажей
+document.getElementById('next').addEventListener('click',() => {
+   let lastInCurrentCup = cupPeoples[cupPeoples.length-1].i;
+
+   if (lastInCurrentCup !== peoples.length-1){
+      drawPersonages(lastInCurrentCup+1,lastInCurrentCup+4);
+   }
+   else {
+      if (nextPeoplesPage!==null){
+         load(nextPeoplesPage);
+      }
+   }
+});
+// стрелка назад для персонажей
+document.getElementById('prev').addEventListener('click',() => {
+   let firstInCurrentCup = cupPeoples[0].i;
+   console.log(firstInCurrentCup)
+   if (firstInCurrentCup !== 0){
+      drawPersonages(firstInCurrentCup-3,firstInCurrentCup);
+   }
+   else {
+      if (prevPeoplesPage!==null){
+         load(prevPeoplesPage);
+      }
+   }
+});
