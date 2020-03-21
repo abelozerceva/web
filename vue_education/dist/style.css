@@ -1,0 +1,4 @@
+body{background-color:#F0F0F0}header{justify-content:space-between;margin:40px 83px 0}header .logo{display:flex}header .logo .left-circle,header .logo .right-circle{width:28px;height:28px;border-radius:50%;border:2px solid #316099}header .logo .right-circle{background-color:#fff;position:relative;left:-14px}header .logo .right-circle span{font-size:20px;line-height:28px;color:#316099;position:relative;left:7px}header .logo .left-circle{background-color:#316099}.clients{padding:123px 213px;color:#316099}
+
+.menu{text-align:center;margin:18px 0}.menu nav{margin-bottom:40px}.menu nav a{text-decoration:none;color:white;text-transform:uppercase;padding:18px 30px;background-color:#5597b4}.menu p{font-size:22px;font-weight:bold;color:#7d9098}.menu p b{color:white;padding:5px 10px;background-color:#c4d7e0;border-radius:2px;text-transform:uppercase;font-size:18px}
+

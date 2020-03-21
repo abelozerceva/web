@@ -1,0 +1,51 @@
+// $font_Gilroy: 'Gilroy';
+
+$color_blue: #316099;
+$color_white: white;
+
+$diam_circle: 28px;
+
+@mixin baseSettingsLogo() {
+    display: flex;
+    .left-circle, .right-circle {
+        width: $diam_circle;
+        height: $diam_circle;
+        border-radius: 50%;
+        border: 2px solid $color_blue;
+    }
+    .right-circle {
+        background-color: $color_white;
+        position: relative;
+        left: -$diam_circle / 2;
+        span {
+            // font-family: $font_Gilroy;
+            font-size: 20px;
+            line-height: 28px;
+            color: $color_blue;
+            position: relative;
+            left: $diam_circle / 4;
+        }
+    }
+
+}
+
+body {
+    background-color: #F0F0F0;
+}
+
+header {
+    justify-content: space-between;
+    margin: 40px 83px 0;
+    .logo {
+        @include baseSettingsLogo;
+        .left-circle {
+            background-color: $color_blue;
+        }
+    }
+}
+
+.clients {
+    padding: 123px 213px;
+    color: $color_blue;
+    
+}
