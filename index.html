@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+
+  <div id="app-2">
+    <span v-bind:title="message">
+      Наведи на меня курсор на пару секунд,
+      чтобы увидеть динамически связанное значение title!
+    </span>
+  </div>
+
+  <div id="app-3">
+    <span v-if="seen">Сейчас меня видно</span>
+  </div>
+
+  <div id="app-4">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div>
+
+  <div id="app-5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">Перевернуть сообщение</button>
+  </div>
+
+  <div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+
+  <div id="app-7">
+    <ol>
+        <!--
+          Теперь мы можем передать каждому компоненту todo-item объект
+          с информацией о задаче, который будет динамически меняться.
+          Мы также определяем для каждого компонента "key",
+          значение которого мы разберём далее в руководстве.
+        -->
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+  </div>
+
+  <!-- v-cloak скрывает нескомпилированные элементы, пока сущность Vue.js не готова. -->
+
+<form id="main" v-cloak>
+
+	<h1>Услуги</h1>
+
+	<ul>
+		<!-- Цикл проходит по массиву услуг, присваивает обработчик для клика, и устанавливает или удаляет класс "active" -->
+		<li v-for="service in services" v-on:click="toggleActive(service)" v-bind:class="{ 'active': service.active}">
+			<!-- Показывает название и цену для каждого вложенного элемента.
+                Vue.js имеет встроенный фильтр валют для формирования цены -->
+			{{service.name}} <span>{{service.price | currency}}</span>
+		</li>
+	</ul>
+
+	<div class="total">
+		<!-- Высчитывает итоговую сумму -->
+		Итого: <span>{{total() | currency}}</span>
+	</div>
+
+</form>
+
+
+    <script src="main.js"></script>
+    <!-- <script src="index.js"></script> -->
+
+</body>
+</html>
